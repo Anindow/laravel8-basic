@@ -30,7 +30,7 @@
       
       <td>{{ $user->name }}</td>
       <td>{{ $user->email }}</td>
-      <td>{{ $user->created_at->diffForHumans() }}</td>
+      <td>{{ Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</td>
     </tr>
         @endforeach
 
