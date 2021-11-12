@@ -6,12 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Auth;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+
 
 
 class CategoryController extends Controller
 {
     public function AllCat(){
-        $categories =Category::all();
+      //  $categories =Category::latest()->get();
+       $categories =Category::latest()->paginate(5);
+      
+    
         return view('admin.category.index' , compact('categories'));
     }
 
