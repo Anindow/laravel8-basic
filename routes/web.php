@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB; 
 /*
@@ -30,11 +31,21 @@ Route::get('/about', function () {
 });
 
 //Category Controller
-Route::get('category/all',[CategoryController::class, 'AllCat'])->name('all.category');
-Route::post('category/add',[CategoryController::class, 'AddCat'])->name('store.category');
-Route::get('category/edit/{id}',[CategoryController::class, 'Edit']);
-Route::post('category/update/{id}',[CategoryController::class, 'Update']);
-Route::get('softdelete/category/{id}',[CategoryController::class, 'SoftDelete']);
+Route::get('/category/all',[CategoryController::class, 'AllCat'])->name('all.category');
+Route::post('/category/add',[CategoryController::class, 'AddCat'])->name('store.category');
+Route::get('/category/edit/{id}',[CategoryController::class, 'Edit']);
+Route::post('/category/update/{id}',[CategoryController::class, 'Update']);
+Route::get('/softdelete/category/{id}',[CategoryController::class, 'SoftDelete']);
+Route::get('/category/restore/{id}',[CategoryController::class, 'Restore']);
+Route::get('/pdelete/category/{id}',[CategoryController::class, 'Pdelete']);
+
+
+
+//Brand COntroller
+Route::get('/brand/all',[BrandController::class, 'AllBrand'])->name('all.brand');
+
+
+
 
 //Route::view('/about','about');
 
