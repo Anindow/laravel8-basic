@@ -12,7 +12,9 @@
                     @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>{{session('success')}}</strong> 
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     @endif
                         <div class="card-header">All Brand</div>
@@ -32,12 +34,12 @@
                                     <tr>
                                         <th scope="row">{{$brands->firstItem()+$loop->index }}</th>
                                         <td>{{$brand->brand_name}}</td>
-                                        <td><img src="" alt=""></td>
+                                        <td><img src="{{asset($brand->brand_image)}}" style="height:40px; width:70px"></td>
                                         <td>
                                             @if($brand->created_at == NULL)
                                             <span class="text-danger">No Data Set</span>
                                             @else
-                                        {{$brand->created_at->diffForHumans()}}
+                                        {{Carbon\Carbon::parse($brand->created_at)->diffForHumans()}}
                                         @endif
                                     </td>
                                     <td>
@@ -55,7 +57,10 @@
                             <div class="card">
                                 <div class="card-header">Add Brand</div>
                                 <div class="card-body">
-                                    <form action="{{route('store.category')}}" method="POST">
+
+
+
+                                    <form action="{{route('store.brand')}}" method="POST" enctype='multipart/form-data' >
                                         @csrf
 
                                         <div class="form-group">
