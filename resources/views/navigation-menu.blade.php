@@ -26,7 +26,7 @@
                     
                     <x-jet-nav-link href="{{ route('multi.image') }}" >
 
-                    Multi Lmage
+                    Multi Image
                 </x-jet-nav-link>
                     
 

@@ -7,9 +7,15 @@ use App\Models\Brand;
 use App\Models\Multipic;
 use Illuminate\Support\Carbon;
 use Intervention\Image\Facades\Image;
+use Auth;
 
 class BrandController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function AllBrand(){
 
         $brands = Brand::latest()->paginate(5);
@@ -134,5 +140,11 @@ public function Update(Request $request,$id){
          return Redirect()->back()->with('success','Brand Inseted Successfully');
         
     }
+
+
+        public function Logout(){
+            Auth::logout();
+            return Redirect()->route('login')->with('success','User Logout');
+        }
 
 }
