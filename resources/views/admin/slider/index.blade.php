@@ -4,11 +4,12 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-<h4>Home Slider</h4>
-        <a href="{{route('add.slider')}}" ><button class="btn btn-info">Add Slider</button></a>
-            <br><br>    
-            <div class="col-md-12">
+<h2 style="margin-left: 15px;"> Home Slider </h2>
+        <br>
+            <div class="col-md-12"><br>
+            <a href="{{route('add.slider')}}" ><button class="btn btn-info">  Add Slider</button></a>
                     <div class="card">
+                        
                     @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>{{session('success')}}</strong> 
@@ -29,10 +30,10 @@
                                 </tr>
                             </thead>    
                                 <tbody>
-                                <!--    @php($i=1) -->
+                                    @php($i=1) 
                                     @foreach($sliders as $slider)
                                     <tr>
-                                        <th scope="row">{{$sliders->firstItem()+$loop->index }}</th>
+                                        <th scope="row">{{$i++ }}</th>
                                         <td>{{$slider->title}}</td>
                                         <td>{{$slider->discription}}</td>
                                         <td><img src="{{asset($slider->image)}}" style="height:40px; width:70px"></td>
