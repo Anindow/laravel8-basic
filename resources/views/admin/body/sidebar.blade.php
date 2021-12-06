@@ -30,10 +30,10 @@
                     <i class="mdi mdi-view-dashboard-outline"></i>
                     <span class="nav-text">Home</span> <b class="caret"></b>
                   </a>
-
-
+    
+<div class="sub-menu">
     <li class="active">
-      <a class="sidenav-item-link" href="index.html">
+      <a class="sidenav-item-link" href="{{route('home.slider')}}">
         <span class="nav-text">Slider</span>
         </a>
     </li>
