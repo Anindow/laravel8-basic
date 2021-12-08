@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB; 
 
@@ -79,3 +80,9 @@ Route::get('/user/logout',[BrandController::class, 'Logout'])->name('user.logout
 Route::get('/home/slider',[HomeController::class, 'HomeSlider'])->name('home.slider');
 Route::get('/add/slider',[HomeController::class, 'AddSlider'])->name('add.slider');
 Route::post('/store/slider',[HomeController::class, 'StoreSlider'])->name('store.slider');
+
+
+//home About all route
+Route::get('/home/about',[AboutController::class, 'HomeAbout'])->name('home.about');
+Route::get('/add/about',[AboutController::class, 'AddAbout'])->name('add.about');
+Route::post('/store/about',[AboutController::class, 'StoreAbout'])->name('store.about');

@@ -4,10 +4,10 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-<h2 style="margin-left: 15px;"> Home Slider </h2>
+<h2 style="margin-left: 15px;"> Home About </h2>
         <br>
             <div class="col-md-12"><br>
-            <a href="{{route('add.slider')}}" ><button class="btn btn-info">  Add Slider</button></a>
+            <a href="{{route('add.about')}}" ><button class="btn btn-info">  Add Home About</button></a>
                     <div class="card">
                         
                     @if(session('success'))
@@ -18,29 +18,29 @@
                             </button>
                         </div>
                     @endif
-                        <div class="card-header">All Slider</div>
+                        <div class="card-header">All About Data</div>
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col" width="5%">SL </th>
-                                    <th scope="col"width="15%">Slider Title</th>
-                                    <th scope="col"width="25%">Descrption</th>
-                                    <th scope="col"width="15%">Image</th>
+                                    <th scope="col"width="15%">Home Title</th>
+                                    <th scope="col"width="25%"> Short Descrption</th>
+                                    <th scope="col"width="15%">Long Descrption</th>
                                     <th scope="col"width="15%">Action</th>
                                 </tr>
                             </thead>    
                                 <tbody>
                                     @php($i=1) 
-                                    @foreach($sliders as $slider)
+                                    @foreach($homeabout as $about)
                                     <tr>
                                         <th scope="row">{{$i++ }}</th>
-                                        <td>{{$slider->title}}</td>
-                                        <td>{{$slider->discription}}</td>
-                                        <td><img src="{{asset($slider->image)}}" style="height:40px; width:70px"></td>
+                                        <td>{{$about->title}}</td>
+                                        <td>{{$about->short_dis}}</td>
+                                        <td>{{$about->long_dis}}</td>
                                         
                                     <td>
-                                        <a href="{{ url('slider/edit/'.$slider->id) }}" class="btn btn-info">Edit</a>
-                                        <a href="{{ url('slider/delete/'.$slider->id) }}" onclick="return confirm('Are u sure to delete ?')"
+                                        <a href="{{ url('about/edit/'.$about->id) }}" class="btn btn-info">Edit</a>
+                                        <a href="{{ url('about/delete/'.$about->id) }}" onclick="return confirm('Are u sure to delete ?')"
                                         class="btn btn-danger">Delete</a>
                                     </td>
                                     </tr>
