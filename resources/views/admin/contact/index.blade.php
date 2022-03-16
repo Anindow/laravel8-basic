@@ -4,10 +4,10 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-<h4> Home About </h4>
+<h4> Contact Page </h4>
         
             
-            <a href="{{route('add.about')}}" ><button class="btn btn-info">  Add Home About</button></a>
+            <a href="{{route('add.contact')}}" ><button class="btn btn-info">  Add Contact</button></a>
             <br><br>
 
             <div class="col-md-12">
@@ -21,29 +21,29 @@
                             </button>
                         </div>
                     @endif
-                        <div class="card-header">All About Data</div>
+                        <div class="card-header">All Contact Data</div>
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col" width="5%">SL </th>
-                                    <th scope="col"width="15%">Home Title</th>
-                                    <th scope="col"width="25%"> Short Descrption</th>
-                                    <th scope="col"width="15%">Long Descrption</th>
+                                    <th scope="col"width="15%">Contact Address</th>
+                                    <th scope="col"width="25%"> Contact Email</th>
+                                    <th scope="col"width="15%">Contact Phone</th>
                                     <th scope="col"width="15%">Action</th>
                                 </tr>
                             </thead>    
                                 <tbody>
                                     @php($i=1) 
-                                    @foreach($homeabout as $about)
+                                    @foreach($contacts as $con)
                                     <tr>
                                         <th scope="row">{{$i++ }}</th>
-                                        <td>{{$about->title}}</td>
-                                        <td>{{$about->short_dis}}</td>
-                                        <td>{{$about->long_dis}}</td>
+                                        <td>{{$con->address}}</td>
+                                        <td>{{$con->email}}</td>
+                                        <td>{{$con->phone}}</td>
                                         
                                     <td>
-                                        <a href="{{ url('about/edit/'.$about->id) }}" class="btn btn-info">Edit</a>
-                                        <a href="{{ url('about/delete/'.$about->id) }}" onclick="return confirm('Are u sure to delete ?')"
+                                        <a href="{{ url('contact/edit/'.$con->id) }}" class="btn btn-info">Edit</a>
+                                        <a href="{{ url('contact/delete/'.$con->id) }}" onclick="return confirm('Are u sure to delete ?')"
                                         class="btn btn-danger">Delete</a>
                                     </td>
                                     </tr>
