@@ -101,13 +101,4 @@
 
   </main><!-- End #main -->
 
-
-
-
-
-
-
-
-
-
 @endsection
