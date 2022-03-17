@@ -12,6 +12,6 @@ class ContactForm extends Model
         'name',
         'email', 
         'subject', 
-        'nessage', 
+        'message', 
     ];
 }

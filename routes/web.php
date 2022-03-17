@@ -115,3 +115,4 @@ Route::get("/contact/delete/{id}", [ContactController::class, 'DeleteContact']);
 /// Home Contact Page
 
 Route::get("/contact", [ContactController::class, 'Contact'])->name('contact');
+Route::post("/contact/form", [ContactController::class, 'ContactForm'])->name('contact.form');
