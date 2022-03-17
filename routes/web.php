@@ -110,7 +110,8 @@ Route::post("admin/store/contact", [ContactController::class, 'AdminStoreContact
 Route::get("/contact/edit/{id}", [ContactController::class, 'EditContact']);
 Route::post("/update/contact/{id}", [ContactController::class, 'UpdateContact']);
 Route::get("/contact/delete/{id}", [ContactController::class, 'DeleteContact']);
-
+Route::get("/admin/message", [ContactController::class, 'AdminMessage'])->name('admin.message');
+Route::get("/message/delete/{id}", [ContactController::class, 'DeleteMessage']);
 
 /// Home Contact Page
 

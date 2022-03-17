@@ -76,19 +76,23 @@
               @csrf
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name"   /></div>
+                  <input type="text" name="name" class="form-control" placeholder="Your Name"   />
+                <p> </p>
+                 </div>
 
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email"  placeholder="Your Email"   /></div>
+                  <input type="email" class="form-control" name="email"  placeholder="Your Email"   />
+                  <p> </p>
+                 </div>
 
               </div>
               <div class="form-group">
                 <input type="text" class="form-control"  name="subject" placeholder="Subject"   />
-                
+                <p> </p>
               </div>
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5"   placeholder="Message"></textarea>
-                
+                <p> </p>
               </div>
               <button class="btn btn-success" type="submit">Send Message</button>
             </form>
