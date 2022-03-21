@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ChangePass;
 use App\Models\User;
 use App\Models\Multipic;
 use Illuminate\Support\Facades\DB; 
@@ -117,3 +118,9 @@ Route::get("/message/delete/{id}", [ContactController::class, 'DeleteMessage']);
 
 Route::get("/contact", [ContactController::class, 'Contact'])->name('contact');
 Route::post("/contact/form", [ContactController::class, 'ContactForm'])->name('contact.form');
+
+
+// Chnage password and User Profile Route
+
+
+Route::get("/user/password", [ChangePass::class, 'CPassword'])->name('change.password');

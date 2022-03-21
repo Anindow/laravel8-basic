@@ -35,14 +35,7 @@
     <!-- FAVICON -->
     <link href="{{ asset('backend/assets/img/favicon.png') }}" rel="shortcut icon" />
   
-    <!--
-      HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-    -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  
     <script src="{{ asset('assets/plugins/nprogress/nprogress.js') }}"></script>
   </head>
 
@@ -553,15 +546,14 @@
                   <!-- User Account -->
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                      <img src="{{ asset('backend/assets/img/user/user.png') }}" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                      <img src="{{Auth::user()->profile_photo_url }}" class="user-image" alt="User Image" />
+                      <span class="d-none d-lg-inline-block">{{Auth::user()->name}}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
                       <li class="dropdown-header">
-                        <img src="{{ asset('backend/assets/img/user/user.png') }}" class="img-circle" alt="User Image" />
-                        <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
+                        <img src="{{Auth::user()->profile_photo_url }}" class="img-circle" alt="User Image" />
+                        <div class="d-inline-block">{{Auth::user()->name }} <small class="pt-1">{{Auth::user()->email}}</small>
                         </div>
                       </li>
 
@@ -571,8 +563,8 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
-                          <i class="mdi mdi-email"></i> Message
+                        <a href="{{route('change.password')}}">
+                          <i class="mdi mdi-email"></i> Change Password
                         </a>
                       </li>
                       <li>
