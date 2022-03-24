@@ -124,3 +124,8 @@ Route::post("/contact/form", [ContactController::class, 'ContactForm'])->name('c
 
 
 Route::get("/user/password", [ChangePass::class, 'CPassword'])->name('change.password');
+Route::post("/password/update", [ChangePass::class, 'UpdatePassword'])->name('password.update');
+
+//User Profile
+
+Route::get("/profile/update", [ChangePass::class, 'PUpdate'])->name('profile.update');
