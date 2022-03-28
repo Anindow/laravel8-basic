@@ -46,7 +46,12 @@ class BrandController extends Controller
             'brand_image' => $last_img,
             'created_at' => Carbon::now()
         ]);
-        return Redirect()->back()->with('success','Brand Inseted Successfully');
+
+        $notification =array(
+            'message' => 'Brand Inseted Successfully',
+            'alart-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     
 }
 
@@ -82,14 +87,24 @@ public function Update(Request $request,$id){
             'brand_image' => $last_img,
             'created_at' => Carbon::now()
         ]);
-        return Redirect()->back()->with('success','Brand Updated Successfully');
+        $notification =array(
+            'message' => 'Brand Updated Successfully',
+            'alart-type' => 'info'
+        );
+
+        return Redirect()->route('all.brand')->with($notification);
     
     }else{
         Brand::find($id)->update([
             'brand_name' => $request->brand_name,
             'created_at' => Carbon::now()
         ]);
-        return Redirect()->back()->with('success','Brand Updated Successfully');
+        $notification =array(
+            'message' => 'Brand Updated Successfully',
+            'alart-type' => 'warning'
+        );
+
+        return Redirect()->route('all.brand')->with($notification);
 
     }
 
@@ -102,7 +117,11 @@ public function Update(Request $request,$id){
 
 
         Brand::find($id)->delete();
-        return Redirect()->back()->with('success','Brand Delete Successfully');
+        $notification =array(
+            'message' => 'Brand Deleted Successfully',
+            'alart-type' => 'error'
+        );
+        return Redirect()->back()->with($notification);
 
     }
 

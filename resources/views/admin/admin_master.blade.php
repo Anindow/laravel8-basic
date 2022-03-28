@@ -31,13 +31,11 @@
 
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="{{ asset('backend/assets/css/sleek.css') }}" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
   
     <!-- FAVICON -->
     <link href="{{ asset('backend/assets/img/favicon.png') }}" rel="shortcut icon" />
-  
-  
-    <script src="{{ asset('assets/plugins/nprogress/nprogress.js') }}"></script>
-  </head>
 
   <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
     <script>
@@ -45,27 +43,12 @@
       NProgress.start();
     </script>
 
-    <div id="toaster"></div>
+   <!-- <div id="toaster"></div> -->
 
     <!-- ====================================
     ——— WRAPPER
     ===================================== -->
     <div class="wrapper">
-
-      <!-- Github Link -->
-      <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
-        <svg width="70" height="70" viewBox="0 0 250 250" aria-hidden="true">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="75%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#896def;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#482271;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <path d="M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z" fill="url(#grad1)"></path>
-        </svg>
-        <i class="mdi mdi-github-circle"></i>
-      </a>
-
 
       @include('admin.body.sidebar')
 
@@ -641,30 +624,33 @@
     <script src="{{ asset('backend/assets/plugins/daterangepicker/moment.min.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
     <script src="{{ asset('backend/assets/js/date-range.js') }}"></script>
-
-    
-
-    
-    
-    
-    
-
+   
     <script src="{{ asset('backend/assets/plugins/toastr/toastr.min.js') }}"></script>
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
-
-    <script src="{{ asset('backend/assets/js/sleek.js') }}"></script>
+<script src="{{ asset('backend/assets/js/sleek.js') }}"></script>
   <link href="{{ asset('backend/assets/options/optionswitch.css') }}" rel="stylesheet">
 <script src="{{ asset('backend/assets/options/optionswitcher.js') }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+ @if(Session::has('message'))
+ var type= "{{ Session::get('alart-type','info') }}" 
+ switch(type){
+   case 'info':
+     toastr.info("{{ Session::get('message') }}");
+     break;
+   case 'success':
+     toastr.success("{{ Session::get('message') }}");
+     break;
+   case 'warning':
+     toastr.warning("{{ Session::get('message') }}");
+     break;
+   case 'error':
+     toastr.error("{{ Session::get('message') }}");
+     break;
+ }
+ @endif
+</script>
+
 </body>
 </html>
 
