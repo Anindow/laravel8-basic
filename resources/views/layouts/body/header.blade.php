@@ -33,6 +33,7 @@
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="{{route('contact')}}">Contact</a></li>
+          <li><a href="{{route('login')}}">Login</a></li>
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
